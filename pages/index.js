@@ -1,29 +1,24 @@
-import { useState } from "react";
-import { Button } from "react-bootstrap";
 import Qrcode from "../Components/Qrcode";
-import NewCode from "../Components/NewCode";
 
 export default function Home() {
-  const [showCode, setShowCode] = useState(false);
   const GoogleEventURL =
     "https://calendar.google.com/event?action=TEMPLATE&tmeid=NXVkN2hzZWYwcDdzb2d1YTU1NzAwaTlxZWkgY2hpZGkuZXplMDAyQG0&tmsrc=chidi.eze002%40gmail.com";
 
   return (
-    <div className="container">
-      <h4 className="mt-5 fs-1 text-center">Scan to Save a Google Event</h4>
+    <div className=" bg-danger">
+      <h1 className="p-3 text-center text-light">Welcome on Board!</h1>
+
       <main>
         <div>
-          <Qrcode value={GoogleEventURL} size={400} />
+          <h4 className="mt-5 fs-1 text-center text-light">
+            Scan to book a spot.
+          </h4>
+          <h5 className="mt-2 fs-3 text-center text-light">
+            <i>Save and Share</i>
+          </h5>
         </div>
         <div>
-          <Button
-            variant={!showCode ? "primary" : "danger"}
-            className="mb-5"
-            onClick={() => setShowCode(!showCode)}
-          >
-            {!showCode ? "Generate Another Code" : "Close"}
-          </Button>
-          {showCode && <NewCode setShowCode={setShowCode} />}
+          <Qrcode value={GoogleEventURL} size={300} />
         </div>
       </main>
     </div>

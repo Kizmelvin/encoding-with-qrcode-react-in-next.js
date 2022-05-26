@@ -21,7 +21,7 @@ function Qrcode({ value, size }) {
   return (
     <div ref={codeRef} style={{ display: "flex", flexDirection: "column" }}>
       <QRCodeSVG size={size} value={value} />
-      <Button className="mt-3 p-2" variant="primary" onClick={handleSave}>
+      <Button className="mt-3 p-2" variant="secondary" onClick={handleSave}>
         Save SVG
       </Button>
     </div>
